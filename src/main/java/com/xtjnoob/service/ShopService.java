@@ -3,6 +3,7 @@ package com.xtjnoob.service;
 import com.xtjnoob.entity.ArticleType;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: xtjnoob
@@ -12,4 +13,7 @@ import java.util.List;
 public interface ShopService {
 
     List<ArticleType> getAllArticleTypes();
+
+    Map<String, Object> login(String loginName, String password);
+
 }
