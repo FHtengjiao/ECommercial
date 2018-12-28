@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh_CN">
@@ -18,17 +17,17 @@
 
             // 给登录按钮绑定点击事件
             $("#loginBtn").click(function(){
-                var loginName = $("#loginName").val();
-                var passWord = $("#passWord").val() ;
+                let loginName = $("#loginName").val();
+                let passWord = $("#passWord").val() ;
                 // 定义一个变量存储校验信息
-                var msg  = "" ;
+                let msg  = "" ;
                 if(!/^\w{5,}$/.test(loginName)){
                     msg = "登录名必须5个字符以上";
                 }else if(!/^\w{6,}$/.test(passWord)){
                     msg = "请输入6位以上合法的密码";
                 }
 
-                if(msg!=""){
+                if(msg!==""){
                     // 触发弹出框
                     $('#myModal').modal('show');
                     $("#tip").html("<span style='color:red;'>"+msg+"</span>");
@@ -59,7 +58,7 @@
     <div class="page-header">
         <h1>用户登录</h1>
     </div>
-    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath }/login?method=login">
+    <form class="form-horizontal" method="post" action="${pageContext.request.contextPath }/login">
         <div style="color: red;">${msg}</div>
         <div class="form-group">
             <div class="col-sm-4 col-sm-push-4">

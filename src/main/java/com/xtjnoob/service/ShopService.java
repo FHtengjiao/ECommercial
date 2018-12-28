@@ -1,5 +1,6 @@
 package com.xtjnoob.service;
 
+import com.xtjnoob.entity.Article;
 import com.xtjnoob.entity.ArticleType;
 
 import java.util.List;
@@ -12,8 +13,9 @@ import java.util.Map;
  */
 public interface ShopService {
 
-    List<ArticleType> getAllArticleTypes();
-
     Map<String, Object> login(String loginName, String password);
 
+    List<ArticleType> getFirstArticleTypes();
+
+    List<Article> getAllArticles();
 }

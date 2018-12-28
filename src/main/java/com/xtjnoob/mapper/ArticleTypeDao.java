@@ -1,6 +1,7 @@
 package com.xtjnoob.mapper;
 
 import com.xtjnoob.entity.ArticleType;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +15,6 @@ import java.util.List;
 @Repository("articleTypeDao")
 public interface ArticleTypeDao {
 
-    List<ArticleType> getAllArticleTypes();
-
+    @Select("SELECT * FROM `article_type` WHERE length(code) = 4")
+    List<ArticleType> searchFirstArticleTypes();
 }
